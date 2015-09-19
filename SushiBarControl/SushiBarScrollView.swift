@@ -27,21 +27,26 @@ class SushiBarScrollView: UIScrollView {
         }
         
         func scrollViewDidScroll(scrollView: UIScrollView) {
-            (scrollView as! SushiBarScrollView).didScroll()
+            if let sushiBar = scrollView as? SushiBarScrollView {
+                sushiBar.didScroll()
+            }
             _userDelegate?.scrollViewDidScroll?(scrollView)
         }
     }
     
-    private var _delegateProxy =  _DelegateProxy()
-    
     required init(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-        super.delegate = _delegateProxy
+        fatalError("init(coder:) has not been implemented")
     }
+    
+    private var _delegateProxy =  _DelegateProxy()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
         super.delegate = _delegateProxy
+        
+        self.pagingEnabled = true
+        self.clipsToBounds = false
+        self.showsHorizontalScrollIndicator = false
     }
     
     override var delegate:UIScrollViewDelegate? {
@@ -57,29 +62,8 @@ class SushiBarScrollView: UIScrollView {
     
     var pageImages: [UIImage] = []
     var pageViews: [UIImageView?] = []
-
-    convenience init(frame: CGRect, pageImages: [UIImage]) {
-        self.init(frame: frame)
-        self.pageImages = pageImages
-        
-        self.pagingEnabled = true
-        self.clipsToBounds = false
-        
-        let pageCount = pageImages.count
-        
-        // Set up the array to hold the views for each page
-        for _ in 0..<pageCount {
-            pageViews.append(nil)
-        }
-        
-        // Set up the content size of the scroll view
-        let pagesScrollViewSize = self.frame.size
-        self.contentSize = CGSizeMake(pagesScrollViewSize.width * CGFloat(pageImages.count), pagesScrollViewSize.height)
-        
-        // Load the initial set of pages that are on screen
-        loadVisiblePages()
-    }
     
+    var button: UIButton?
     
     func loadPage(page: Int) {
         
@@ -104,7 +88,7 @@ class SushiBarScrollView: UIScrollView {
             newPageView.contentMode = .ScaleAspectFill
             newPageView.frame = frame
             
-            newPageView.layer.borderWidth = 1.0
+            newPageView.layer.borderWidth = 3.0
             newPageView.layer.masksToBounds = false
             newPageView.layer.borderColor = UIColor.whiteColor().CGColor
             newPageView.layer.cornerRadius = newPageView.frame.size.height / 2
@@ -160,5 +144,6 @@ class SushiBarScrollView: UIScrollView {
     
     func didScroll() {
         loadVisiblePages()
+        button?.frame.origin = self.contentOffset
     }
 }
