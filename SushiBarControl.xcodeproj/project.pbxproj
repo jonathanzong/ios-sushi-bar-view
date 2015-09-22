@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		F41C862B1BACEFBE00C4E84A /* SushiBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F41C862A1BACEFBE00C4E84A /* SushiBarView.swift */; };
 		F44847091BABA81900906ED6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F44847081BABA81900906ED6 /* AppDelegate.swift */; };
 		F448470B1BABA81900906ED6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F448470A1BABA81900906ED6 /* ViewController.swift */; };
 		F448470E1BABA81900906ED6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F448470C1BABA81900906ED6 /* Main.storyboard */; };
@@ -19,7 +18,8 @@
 		F44847311BABBA1400906ED6 /* photo3.png in Resources */ = {isa = PBXBuildFile; fileRef = F448472C1BABBA1400906ED6 /* photo3.png */; };
 		F44847321BABBA1400906ED6 /* photo4.png in Resources */ = {isa = PBXBuildFile; fileRef = F448472D1BABBA1400906ED6 /* photo4.png */; };
 		F44847331BABBA1400906ED6 /* photo5.png in Resources */ = {isa = PBXBuildFile; fileRef = F448472E1BABBA1400906ED6 /* photo5.png */; };
-		F44847351BABC00800906ED6 /* SushiBarScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F44847341BABC00800906ED6 /* SushiBarScrollView.swift */; };
+		F4644EC21BB1018600897DD5 /* SushiBarScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4644EC01BB1018600897DD5 /* SushiBarScrollView.swift */; };
+		F4644EC31BB1018600897DD5 /* SushiBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4644EC11BB1018600897DD5 /* SushiBarView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,7 +33,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		F41C862A1BACEFBE00C4E84A /* SushiBarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SushiBarView.swift; sourceTree = "<group>"; };
 		F44847031BABA81900906ED6 /* SushiBarControl.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SushiBarControl.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F44847071BABA81900906ED6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F44847081BABA81900906ED6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -49,7 +48,8 @@
 		F448472C1BABBA1400906ED6 /* photo3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = photo3.png; sourceTree = "<group>"; };
 		F448472D1BABBA1400906ED6 /* photo4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = photo4.png; sourceTree = "<group>"; };
 		F448472E1BABBA1400906ED6 /* photo5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = photo5.png; sourceTree = "<group>"; };
-		F44847341BABC00800906ED6 /* SushiBarScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SushiBarScrollView.swift; sourceTree = "<group>"; };
+		F4644EC01BB1018600897DD5 /* SushiBarScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SushiBarScrollView.swift; path = SushiBarControl/SushiBarView/SushiBarScrollView.swift; sourceTree = "<group>"; };
+		F4644EC11BB1018600897DD5 /* SushiBarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SushiBarView.swift; path = SushiBarControl/SushiBarView/SushiBarView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +73,7 @@
 		F44846FA1BABA81900906ED6 = {
 			isa = PBXGroup;
 			children = (
+				F4644EBF1BB1017C00897DD5 /* SushiBarView */,
 				F44847051BABA81900906ED6 /* SushiBarControl */,
 				F448471B1BABA81A00906ED6 /* SushiBarControlTests */,
 				F44847041BABA81900906ED6 /* Products */,
@@ -91,14 +92,12 @@
 		F44847051BABA81900906ED6 /* SushiBarControl */ = {
 			isa = PBXGroup;
 			children = (
-				F41C862A1BACEFBE00C4E84A /* SushiBarView.swift */,
 				F44847081BABA81900906ED6 /* AppDelegate.swift */,
 				F448470A1BABA81900906ED6 /* ViewController.swift */,
 				F448470C1BABA81900906ED6 /* Main.storyboard */,
 				F448470F1BABA81900906ED6 /* Images.xcassets */,
 				F44847111BABA81900906ED6 /* LaunchScreen.xib */,
 				F44847061BABA81900906ED6 /* Supporting Files */,
-				F44847341BABC00800906ED6 /* SushiBarScrollView.swift */,
 			);
 			path = SushiBarControl;
 			sourceTree = "<group>";
@@ -131,6 +130,15 @@
 				F448471D1BABA81A00906ED6 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		F4644EBF1BB1017C00897DD5 /* SushiBarView */ = {
+			isa = PBXGroup;
+			children = (
+				F4644EC01BB1018600897DD5 /* SushiBarScrollView.swift */,
+				F4644EC11BB1018600897DD5 /* SushiBarView.swift */,
+			);
+			name = SushiBarView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -240,8 +248,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				F448470B1BABA81900906ED6 /* ViewController.swift in Sources */,
-				F41C862B1BACEFBE00C4E84A /* SushiBarView.swift in Sources */,
-				F44847351BABC00800906ED6 /* SushiBarScrollView.swift in Sources */,
+				F4644EC31BB1018600897DD5 /* SushiBarView.swift in Sources */,
+				F4644EC21BB1018600897DD5 /* SushiBarScrollView.swift in Sources */,
 				F44847091BABA81900906ED6 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
